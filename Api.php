@@ -314,5 +314,61 @@ VALUES ('" . $_POST['subject'] . "', '" . $_POST['description'] . "', '" . $_POS
 
         echo $row;
     }
+    public function insert_database_tables(){
+        $host = 'localhost';
+        $user = 'root';
+        $pass = '';
+        $conn = mysqli_connect($host, $user, $pass)
+        ;
+        
+        //echo $sql;
+        $conn->query("create database task");
+        mysqli_select_db($conn,"task");
+        $conn->query("CREATE TABLE `notes` (
+  `id` int(11) NOT NULL,
+  `task_id` int(11) NOT NULL,
+  `subject` text DEFAULT NULL,
+  `attachment` text DEFAULT NULL,
+  `note` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;");
+        $conn->query("CREATE TABLE `task` (
+  `id` int(11) NOT NULL,
+  `subject` text DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `start_date` date DEFAULT NULL,
+  `due_date` date DEFAULT NULL,
+  `total_notes` int(11) NOT NULL DEFAULT 0,
+  `status` enum('New','Incomplete','Complete','') NOT NULL,
+  `priority` enum('High','Medium','Low','') NOT NULL,
+  `user_id` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+");
+        $conn->query("CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `password` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+");
+      
+        $conn->query("INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
+(12, 'Amol', 'amolj3064@gmail.com', '7eb62a173a590b6f97f15b1303b857f4')");
+$conn->query("ALTER TABLE `notes`
+  ADD PRIMARY KEY (`id`);");
+$conn->query("ALTER TABLE `task`
+  ADD PRIMARY KEY (`id`);");
+  $conn->query("ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);");
+$conn->query("ALTER TABLE `notes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;");
+  $conn->query("ALTER TABLE `task`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;");
+$conn->query("ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+");
+        
+     //   $conn->query("create database task2");
+    }
+
 }
 ?>
