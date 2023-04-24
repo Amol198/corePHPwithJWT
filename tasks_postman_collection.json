@@ -1,0 +1,270 @@
+{
+	"info": {
+		"_postman_id": "05a3ea90-62f9-462a-8cf8-1be1d73bcaca",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21001144"
+	},
+	"item": [
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Amol",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "amolj3064@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Amol@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/Tasks/index.php/Api/registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Tasks",
+						"index.php",
+						"Api",
+						"registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "amolj3064@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Amol@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/Tasks/index.php/Api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Tasks",
+						"index.php",
+						"Api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2ODIzMTgyMTEsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTY4ODk4NDg3MSwidXNlcklkIjoxMX0.LVyCfhkiLTzUM5xv3quNhux9PKyD51srdXU-mQdRLsM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2ODIzMTgyMTEsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTY4ODk4NDg3MSwidXNlcklkIjoxMX0.LVyCfhkiLTzUM5xv3quNhux9PKyD51srdXU-mQdRLsM",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "subject",
+							"value": "Subject",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "test description",
+							"type": "text"
+						},
+						{
+							"key": "start_date",
+							"value": "2023-01-01",
+							"type": "text"
+						},
+						{
+							"key": "due_date",
+							"value": "2023-02-01",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Complete",
+							"type": "text"
+						},
+						{
+							"key": "priority",
+							"value": "High",
+							"type": "text"
+						},
+						{
+							"key": "notes[0][subject]",
+							"value": "subject1",
+							"type": "text"
+						},
+						{
+							"key": "notes[1][subject]",
+							"value": "subject2",
+							"type": "text"
+						},
+						{
+							"key": "notes[2][subject]",
+							"value": "subject3",
+							"type": "text"
+						},
+						{
+							"key": "notes[0][note]",
+							"value": "note1",
+							"type": "text"
+						},
+						{
+							"key": "notes[1][note]",
+							"value": "note2",
+							"type": "text"
+						},
+						{
+							"key": "notes[2][note]",
+							"value": "note3",
+							"type": "text"
+						},
+						{
+							"key": "notes[0][upload_file][]",
+							"type": "file",
+							"src": [
+								"/C:/Users/amolj/OneDrive/Pictures/Screenshots/Screenshot 2023-03-02 081854.png",
+								"/C:/Users/amolj/OneDrive/Pictures/Screenshots/Screenshot 2023-03-03 082116.png"
+							]
+						},
+						{
+							"key": "notes[2][upload_file][]",
+							"type": "file",
+							"src": "/C:/Users/amolj/OneDrive/Pictures/Screenshots/Screenshot 2023-03-14 081507.png"
+						},
+						{
+							"key": "access_token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2ODIzMTgyMTEsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTY4ODk4NDg3MSwidXNlcklkIjoxMX0.LVyCfhkiLTzUM5xv3quNhux9PKyD51srdXU-mQdRLsM",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/Tasks/index.php/Api/create_task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Tasks",
+						"index.php",
+						"Api",
+						"create_task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reports",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2ODIzMTgyMTEsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTY4ODk4NDg3MSwidXNlcklkIjoxMX0.LVyCfhkiLTzUM5xv3quNhux9PKyD51srdXU-mQdRLsM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "minimum_one_note",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Complete",
+							"type": "text"
+						},
+						{
+							"key": "due_date",
+							"value": "2023-02-01",
+							"type": "text"
+						},
+						{
+							"key": "priority",
+							"value": "High",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/Tasks/index.php/Api/reports",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Tasks",
+						"index.php",
+						"Api",
+						"reports"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
