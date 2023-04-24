@@ -1,0 +1,6 @@
+{
+    "require": {
+        "bshaffer/oauth2-server-php": "^1.13",
+        "firebase/php-jwt": "^6.4"
+    }
+}
