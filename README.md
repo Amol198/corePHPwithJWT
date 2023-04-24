@@ -22,7 +22,7 @@ Except Login and register other APIs are JWT authenticated for security purpose.
 
 First of all we will create the database
 http://localhost/Tasks/index.php/Api/insert_database_tables
-You can just hit this API. This will create first database and then the respected tables.
+You can just hit this API. This will create first database and then the respected tables. 
 
 
 our first API will be registration API.
