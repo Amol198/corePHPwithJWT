@@ -20,6 +20,11 @@ it has one extended parent file name BaseController.php.
 in BaseController file JWT authentication part and database connections written.
 Except Login and register other APIs are JWT authenticated for security purpose.
 
+First of all we will create the database
+http://localhost/Tasks/index.php/Api/insert_database_tables
+You can just hit this API. This will create first database and then the respected tables.
+
+
 our first API will be registration API.
 http://localhost/Tasks/index.php/Api/registration
 by clicking this you can register yourself. You have to pass name, email and password to register.

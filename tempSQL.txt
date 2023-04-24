@@ -1,0 +1,31 @@
+CREATE TABLE `notes` (
+  `id` int(11) NOT NULL,
+  `task_id` int(11) NOT NULL,
+  `subject` text DEFAULT NULL,
+  `attachment` text DEFAULT NULL,
+  `note` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `task` (
+  `id` int(11) NOT NULL,
+  `subject` text DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `start_date` date DEFAULT NULL,
+  `due_date` date DEFAULT NULL,
+  `total_notes` int(11) NOT NULL DEFAULT 0,
+  `status` enum('New','Incomplete','Complete','') NOT NULL,
+  `priority` enum('High','Medium','Low','') NOT NULL,
+  `user_id` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `password` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
+(12, 'Amol', 'amolj3064@gmail.com', '7eb62a173a590b6f97f15b1303b857f4');
+
